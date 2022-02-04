@@ -5,8 +5,9 @@ end
 load('Noise_Profile')
 load('Calibrated_Wavelength')
 
-port = serialportlist("available");
-arduinoObj = serialport(port(end), 115200);
+port = serialportlist("available")
+portIdx = input("Index of serial port? (1, 2, 3, etc...): ")
+arduinoObj = serialport(port(portIdx), 115200);
 arduinoObj.flush();
 
 numPixels = 1024;
